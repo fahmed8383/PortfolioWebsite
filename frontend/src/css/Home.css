@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.headerSkew{
+    height: 95vh;
+    border-bottom: 10px solid #FFFFFFE5;
+    transform-origin: top right;
+    transform: skewY(5deg);
+    overflow: hidden;
+}
+
+.content{
+    transform: skewY(-5deg);
+    color: #FFFFFFE5;
+}
+
+.headerTitle{
+    margin-top: 30vh;
+    margin-left: 15vw;
+    font-family: 'Righteous', cursive;
+    font-size: 2.5vw;
+}
+
+.aboutSkew{
+    position: relative;
+    height: 120vh;
+    background-color: #1b262c;
+    margin-top: 5vh;
+    transform: skewY(-30deg);
+    animation-name: slideDown;
+    animation-duration: 1.5s;
+}
+
+.aboutContent{
+    position: absolute;
+    top: 17vw;
+    right: 2vw;
+    width: 45vw;
+    transform: skewY(30deg);
+    color: #FFFFFFE5;
+}
+
+.aboutContent h1{
+    font-size: 3vh;
+}
+
+.moreInfoButton{
+    padding: 1vh 2vw;
+    background-color: transparent;
+    border: 1px solid #FFFFFFE5 ;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease 0s;
+}
+
+.moreInfoButton:hover{
+    border-color: #0088a9;
+    color: #0088a9;
+}
+
+.subSection{
+    position: relative;
+    color: #FFFFFFE5;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    max-width: 1600px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.subSection hr{
+    width: 30%;
+}
+
+.subSection h1{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 5vh;
+}
+
+.subSection h2{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2vh;
+}
+
+.projects{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.projects:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.card{
+    position: relative;
+    width: 350px;
+    height: 570px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 25px;
+    text-align: center;
+    background-color: #171717;
+    transition: all 0.3s ease 0s;
+}
+
+.card img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.cardLinks{
+    position: absolute;
+    top: 250px;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.card h3{
+    font-size: 20px;
+}
+
+.card p{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.card:hover{
+    margin-top: 20px;
+}
+
+.jobTitle{
+    text-align: left;
+    margin: 0px 30px;
+}
+
+.jobTitle hr{
+    width: 100%;
+    border: none;
+    border-top: 1px solid white;
+}
+
+.jobDescription{
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 30px;
+}
+
+.jobDescription a{
+    color: #b7ceeb;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.footerSkew{
+    height: 700px;
+    border-top: 10px solid #FFFFFFE5;
+    transform-origin: top right;
+    transform: skewY(-5deg);
+    overflow: hidden;
+}
+
+.triangle{
+    width: 0;
+    height: 0;
+    border-top: 700px solid #1b262c;
+    border-right: 1500px solid transparent;
+}
+  
+.contactForm {
+    position: relative;
+    transform: skewY(5deg);
+    top: -600px;
+    width: 500px;
+    max-width: 85%;
+    background-color: #171717;
+    margin: auto;
+    margin-bottom: 15vh;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5),0 6px 20px 0 rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+.formHeader {
+    padding: 2px 5%;
+    background-color: #0d0d0d;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+  
+.formBody {
+    padding: 20px 20px;
+    padding-bottom: 20px;
+}
+  
+.formFooter {
+    padding: 10px 5%;
+    background-color: #0d0d0d;
+    color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.contactForm input:not([type="submit"]), .contactForm textarea{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 1px solid #C2C2C2;
+    box-shadow: 1px 1px 4px black;
+    -moz-box-shadow: 1px 1px 4px black;
+    -webkit-box-shadow: 1px 1px 4px black;
+    background-color: #262626;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    padding: 7px;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+    color: white;
+    margin-top: 5px;
+}
+
+.contactForm textarea{
+    height: 200px;
+    max-width: 100%;
+}
+
+.contactForm label{
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 18px;
+    color: white;
+}
+
+.contactForm input:focus, .contactForm textarea:focus{
+    border: 1px solid #0C0;
+}
+
+.button1{
+    padding: 8px 30px;
+    background-color: transparent;
+    border: 1px solid #E8E8E8;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 10px;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500px;
+    font-size: 17px;
+    color: #E8E8E8;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+.dangerText{
+    font-size: 14px;
+    color: red;
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
+}
+
+@media only screen and (min-width: 1900px) {
+    .aboutSkew{
+        margin-top: 5vh;
+    }
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    .aboutSkew{
+        margin-top: 12vh;
+    }
+    .headerTitle{
+        margin-top: 25vh;
+        margin-left: 8vw;
+        font-size: 3vh;
+    }
+    .aboutContent h1{
+        font-size: 3.5vw;
+    }
+    .aboutContent{
+        top: 30vw;
+        right: 7vw;
+        width: 70vw;
+    }
+    .moreInfoButton{
+        padding: 5px 20px;
+    }
+    .subSection{
+        margin-left: 20px;
+        top: 0vh;
+    }
+    .subSection h1{
+        font-size: 3vh;
+    }
+    
+}
+
+@keyframes slideDown {
+    0%  {bottom: -100vh;}
+    100% {bottom: 0;}
+}

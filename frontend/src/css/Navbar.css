@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.navbar{
+    background-color: #171717;
+    margin: 0px;
+    color: #FFFFFFE5;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.navContainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px 10%;
+}
+
+.navLogo{
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Lobster', cursive;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.navLogo:hover{
+    color: #0088a9;
+}
+
+.navbarLinks li, a, button{
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500px;
+    font-size: 17px;
+    color: #FFFFFFE5;
+    text-decoration: none;
+}
+
+.navbar ul{
+    list-style-type: none;
+}
+
+.navbarLinks li{
+    display: inline-block;
+    padding: 0 25px;
+}
+
+.navbarLinks li a{
+    transition: all 0.3s ease 0s;
+}
+
+.navbarLinks li a:hover{
+    color: #0088a9;
+}
+
+.navButton{
+    padding: 8px 30px;
+    background-color: transparent;
+    border: 1px solid #FFFFFFE5 ;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-left: 20px;
+    transition: all 0.3s ease 0s;
+}
+
+.navButton:hover{
+    border-color: #0088a9;
+    color: #0088a9;
+}
+
+.mobileMenu{
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+.navButtonMobileLi{
+    display: none !important;
+}
+
+@media (max-width: 1000px){
+    .mobileMenu{
+        display: block;
+    }
+
+    .navButtonDiv{
+        display: none;
+    }
+
+    nav{
+        display: none;
+        position: absolute;
+        background-color: #212121;
+        width: 100%;
+        top: 70px;
+        left:0px;
+    }
+
+    .nav-inactive{
+        display: block;
+    }
+
+    .navbarLinks li{
+        display: block;
+        padding-left: 15px;
+        padding-bottom: 12px;
+        padding-top: 12px;
+    }
+
+    .navButtonMobileLi{
+        display: block !important;
+        margin-top: 10px;
+    }
+
+    .navButton {
+        margin-left: 0;
+    }
+}

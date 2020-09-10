@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+* {
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+}
+
+html{
+  background-color: #121212;
+  margin: 0px;
+}
+
+body{
+  margin: 0px;
+}
+
+hr{
+  color: #FFFFFFE5;
+  border: 2px #FFFFFFE5 solid;
+}
+
+$body-bg: #121212;
+$body-color: #FFFFFFE5;
+
