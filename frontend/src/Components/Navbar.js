@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../css/Navbar.css'
-import { Link } from "react-scroll";
+import { Link, animateScroll as scroll } from "react-scroll";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -23,7 +23,7 @@ class Navbar extends Component{
     return (
       <div className="navbar">
         <div className="navContainer">
-          <p className="navLogo">Faiq Ahmed</p>
+          <p className="navLogo" onClick={scroll.scrollToTop}>Faiq Ahmed</p>
 
           {/*the class name only effects the mobile menu, that is why only the class name is changed rather than removing it from DOM.
           We still want it displayed on non-mobile menu regardless of whether the button has been clicked or not*/}

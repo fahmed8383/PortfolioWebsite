@@ -50,7 +50,9 @@ class Home extends Component{
 
         // holds variables to check to see if the contact form is filled out correctly
         emailIncorrect: false,
-        valuesMissing: false
+        valuesMissing: false,
+        emailSent: false,
+        emailError: false,
     }
 
     // changes the email in the form variable located in state, also checks to make sure it is a valid email format
@@ -81,6 +83,7 @@ class Home extends Component{
         this.setState({form: form})
     }
 
+    // changes the captcha value in the form variable located in state
     changeCaptcha = (event) => {
         var form = {...this.state.form}
         form.captcha = event;
@@ -89,8 +92,11 @@ class Home extends Component{
 
     // verifies that all information is correct and submits the form
     submitForm = (event) => {
+
+        //prevent page reload on submit
         event.preventDefault();
 
+        // verify that all neccesary fields are completed
         if(this.state.form.email === '' || this.state.form.subject === '' || this.state.form.body === '' || this.state.form.captcha === ''){
             this.setState({valuesMissing: true});
             return
@@ -98,6 +104,7 @@ class Home extends Component{
 
         this.setState({valuesMissing: false});
 
+        // verify that the entered is in a valid email format
         if(!this.validateEmail(this.state.form.email)){
             this.setState({emailIncorrect: true});
             return
@@ -105,8 +112,36 @@ class Home extends Component{
 
         this.setState({emailIncorrect: false});
 
-        console.log(this.state.form)
-        return
+        // send the form json variable to the backend for verification of the captcha and to send the email
+        fetch("/api/send-email", {
+            method: "post",
+            body: JSON.stringify(this.state.form),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(function(response) {
+            return response.json();
+        })
+        .then((data)=>{
+            // if succesful, set emailSent variable to true so a message can be displayed to the user
+            // also reset the form
+            if(data.msg === "success"){
+                this.setState({emailSent: true});
+                this.setState({form: {
+                    email: '',
+                    subject: '',
+                    body: '',
+                    captcha: ''
+                }})
+            }
+            else if(data.msg === "failure"){
+                this.setState({emailError: true});
+            }
+        }) 
+        .catch(err => {
+            console.log(err);
+        });
     }
 
     // checks if the entered email is a valid email format
@@ -177,7 +212,7 @@ class Home extends Component{
                         <div className="formHeader">
                             <h2>Contact Me</h2>
                         </div>
-                        <form onSubmit={e => this.submitForm(e)}>
+                        <form onSubmit={this.submitForm}>
                             <div className="formBody">
                                 <label>Email</label><br/>
                                 <input type="text" value={this.state.form.email} onChange={this.changeEmail}></input>
@@ -190,6 +225,9 @@ class Home extends Component{
                                 <textarea value={this.state.form.body} onChange={this.changeBody} />
                                 {this.state.valuesMissing && this.state.form.body === '' && (<p className="dangerText">This field is required</p>)}<br/><br/>
                                 <ReCAPTCHA theme="dark" sitekey="6LebOcoZAAAAAGGYkJ3ZiuX1h2JvcaMmh8IYbD0J" onChange={this.changeCaptcha}/>
+                                {this.state.valuesMissing && this.state.form.captcha === '' && (<p className="dangerText">This field is required</p>)}
+                                {this.state.emailError && (<p className="dangerText">An error occured while sending your email. Please try again later.</p>)}
+                                {this.state.emailSent && (<p className="dangerText" style={{color: 'green'}}>Your email has been received. Thank you for contacting us</p>)}
                             </div>
                             <div className="formFooter">
                                 <input type="submit" className="button1" value="Submit"></input>

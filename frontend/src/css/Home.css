@@ -161,7 +161,7 @@
 }
 
 .footerSkew{
-    height: 700px;
+    height: 870px;
     border-top: 10px solid #FFFFFFE5;
     transform-origin: top right;
     transform: skewY(-5deg);
@@ -171,14 +171,14 @@
 .triangle{
     width: 0;
     height: 0;
-    border-top: 700px solid #1b262c;
+    border-top: 870px solid #1b262c;
     border-right: 1500px solid transparent;
 }
   
 .contactForm {
     position: relative;
     transform: skewY(5deg);
-    top: -600px;
+    top: -800px;
     width: 500px;
     max-width: 85%;
     background-color: #171717;
