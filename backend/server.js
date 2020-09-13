@@ -76,6 +76,6 @@ app.post('/api/send-email', (req, res) => {
 })
 
 // start server
-app.listen(6060, 'backend');
+app.listen(6061, 'backend');
 
 console.log(`Server running on http://backend:6060`);

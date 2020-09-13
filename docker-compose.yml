@@ -22,7 +22,7 @@ services:
     image: backend
     container_name: backend
     expose:
-      - 6060
+      - 6061
     volumes:
       - ./backend/secrets.json:/secrets.json
     restart: unless-stopped

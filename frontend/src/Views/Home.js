@@ -15,7 +15,7 @@ class Home extends Component{
             title: "Kangaroo - Task Management App",
             text: "Kangaroo is an objective tracking app focused on a simple UI to track tasks and deadline. It allows users to sign up and login in a secure manner to save their tasks and deadlines. It also supports the ability to add subtasks and display progress for each subtask, as well as manually mark tasks as complete, incomplete or on hold. This application was created using Angular, Golang, Postgresql, and Nginx",
             github: 'https://github.com/fahmed8383/Kangaroo-Task-Management-App',
-            url: 'a',
+            url: 'https://kangarooapp.devplayground.ca/',
         },
         {
             img: require('../assets/images/portfolio.jpeg'),
